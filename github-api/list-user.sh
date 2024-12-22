@@ -1,5 +1,13 @@
 #!/bin/bash
 
+############
+#About: This lists the users in particular organisation or repositories
+#Input: export username and token and give the repo_owner as organisation name and repo_name as repository name in the organisation
+#Output: It prints the users with pull permision pull==true 
+#Owner : VinayKumar and SampathVinayak07
+#############
+helper()
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -34,6 +42,13 @@ function list_users_with_read_access {
         echo "Users with read access to ${REPO_OWNER}/${REPO_NAME}:"
         echo "$collaborators"
     fi
+}
+
+function helper {
+expected_cmd_args = 2
+if [ $# -ne $expected_cmd_args ]; then
+echo "Please use correct number of Command args"
+echo "Enter repo_owner and repo_name as cmd args"
 }
 
 # Main script
